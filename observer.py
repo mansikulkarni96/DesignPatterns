@@ -1,13 +1,14 @@
 import abc
 
 
+# Abstract class for Subject which is being observed for changes
 class Subject(metaclass=abc.ABCMeta):
     @abc.abstractmethod
-    def add_observer(self, weather_observer):
+    def add_observer(self, observer):
         pass
 
     @abc.abstractmethod
-    def remove_observer(self, weather_observer):
+    def remove_observer(self, observer):
         pass
 
     @abc.abstractmethod
@@ -15,6 +16,7 @@ class Subject(metaclass=abc.ABCMeta):
         pass
 
 
+# Abstract class for Observer which is observing the subject
 class Observer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
     def do_update(self, name):
